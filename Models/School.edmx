@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SchoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="STUDENT">
+          <Key>
+            <PropertyRef Name="st_id" />
+          </Key>
+          <Property Name="st_id" Type="int" Nullable="false" />
+          <Property Name="st_name" Type="varchar" MaxLength="50" />
+          <Property Name="st_username" Type="varchar" MaxLength="50" />
+          <Property Name="st_password" Type="varchar" MaxLength="50" />
+          <Property Name="st_dob" Type="date" />
+          <Property Name="st_gender" Type="varchar" MaxLength="50" />
+          <Property Name="st_address" Type="varchar" MaxLength="50" />
+          <Property Name="st_email" Type="varchar" MaxLength="50" />
+          <Property Name="st_phone" Type="varchar" MaxLength="50" />
+          <Property Name="fac_id" Type="int" />
+        </EntityType>
+        <EntityContainer Name="SchoolModelStoreContainer">
+          <EntitySet Name="STUDENT" EntityType="Self.STUDENT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="STUDENT">
+          <Key>
+            <PropertyRef Name="st_id" />
+          </Key>
+          <Property Name="st_id" Type="Int32" Nullable="false" />
+          <Property Name="st_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="st_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="st_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="st_dob" Type="DateTime" Precision="0" />
+          <Property Name="st_gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="st_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="st_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="st_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fac_id" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="SchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="STUDENTs" EntityType="Self.STUDENT" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolModelStoreContainer" CdmEntityContainer="SchoolEntities">
+          <EntitySetMapping Name="STUDENTs">
+            <EntityTypeMapping TypeName="SchoolModel.STUDENT">
+              <MappingFragment StoreEntitySet="STUDENT">
+                <ScalarProperty Name="st_id" ColumnName="st_id" />
+                <ScalarProperty Name="st_name" ColumnName="st_name" />
+                <ScalarProperty Name="st_username" ColumnName="st_username" />
+                <ScalarProperty Name="st_password" ColumnName="st_password" />
+                <ScalarProperty Name="st_dob" ColumnName="st_dob" />
+                <ScalarProperty Name="st_gender" ColumnName="st_gender" />
+                <ScalarProperty Name="st_address" ColumnName="st_address" />
+                <ScalarProperty Name="st_email" ColumnName="st_email" />
+                <ScalarProperty Name="st_phone" ColumnName="st_phone" />
+                <ScalarProperty Name="fac_id" ColumnName="fac_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

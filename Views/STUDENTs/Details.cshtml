@@ -1,0 +1,91 @@
+﻿@model Nhom13_UngDungBanCoffeeOnline.Models.STUDENT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>STUDENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.st_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_dob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_dob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fac_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fac_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.st_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
